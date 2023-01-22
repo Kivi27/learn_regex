@@ -1,0 +1,48 @@
+:root {
+    --main-color:#FFF;
+    --color-background-title-table: #AFCDE7;
+    --color-bacground-cell-table: #D8E6F3;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 2rem;
+}
+
+.wrapper__file-selector {
+    margin: 20px 0;
+}
+
+.file-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+}
+
+.log-table-common {
+    width: 90%;
+    font-size: 1rem;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.log-table__common-cell {
+    border: 1px solid var(--main-color);
+}
+
+.log-table__cell {
+    background: var(--color-bacground-cell-table);
+    padding: 10px 20px;
+}
+
+.log-table__title-cell {
+    background: var(--color-background-title-table);
+    color: var(--main-color);
+    padding: 20px 20px;
+}

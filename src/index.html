@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Log parser</title>
     <link href="css/reset.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/log_parser.js"></script>
+    <script src="js/log_table.js"></script>
 </head>
 <body>
-    <input type="file" class="file-selector">
-    <table class="log-output">
-
-    </table>
-    <script src="js/script.js"></script>
+    <main class="wrapper">
+        <div class="file-selector wrapper__file-selector">
+            <p>Load your log</p>
+            <input type="file" class="file-selector__input">
+        </div>
+        <table class="log-table log-table-common"></table>
+        <table class="log-table-warning log-table-common"></table>
+    </main>
+    <script src="js/init.js"></script>
 </body>
 </html>
