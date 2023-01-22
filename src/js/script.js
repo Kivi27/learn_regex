@@ -1,5 +1,5 @@
 const fileSelector = document.querySelector(".file-selector");
-const labelOutput = document.querySelector(".output-log__text");
+const tableOutput = document.querySelector(".log-output");
 
 fileSelector.addEventListener('change',  handleLogSelect);
 
@@ -13,10 +13,14 @@ function handleLogSelect(event) {
     }
 }
 
-function parseLog(logs) {
-    const Rows = logs.split('\n');
-    for (let row of Rows) {
-        const result = row.match(/^(\d\d\/\d\d)\s*(\b\d\d:\d\d:\d\d\b)\s*(\b[a-z]+\b)\s*:\.+(\w+):\s*(.*)$/i);
-        console.log(result);
+function parseLog(logText) {
+    const rows = [];
+    const parseLogs = logText.matchAll(/^(?<date>\d\d\/\d\d)\s*(?<time>\b\d\d:\d\d:\d\d\b)\s*(?<typeMessage>\b[a-z]+\b)\s*:\.+(?<nameService>\w+):\s*(?<message>.*)$/igm);
+
+    for (let parseLog of parseLogs) {
+        rows.push(parseLog.groups)
     }
+
+    return rows;
 }
+
