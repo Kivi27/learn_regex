@@ -9,7 +9,7 @@ class LogParser {
         return this.matchesToRow(matches);
     }
 
-    static findLogByStatus(logText) {
+    static findLogByStatusWarning(logText) {
         const matches = logText.matchAll(/^(?<date>\d\d\/\d\d)\s*(?<time>\b\d\d:\d\d:\d\d\b)\s*(?<typeMessage>\bWARNING\b)\s*:\.+(?<nameService>\w+):\s*(?<message>.*)$/igm);
 
         return this.matchesToRow(matches);
