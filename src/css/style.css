@@ -1,11 +1,11 @@
 :root {
     --main-color:#FFF;
-    --color-background-title-table: #AFCDE7;
-    --color-bacground-cell-table: #D8E6F3;
+    --main-brand-color: #AFCDE7;
+    --second-brand-color: #D8E6F3;
 }
 
 .wrapper {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,17 +16,28 @@
 }
 
 .wrapper__file-selector {
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
-.file-selector {
-    display: flex;
-    flex-direction: column;
-    gap: 20px 0;
+.file-selector__title {
+    display: block;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--main-brand-color);
+    text-align: center;
+}
+
+.file-selector__title:hover {
+    background-color: var(--second-brand-color);
+}
+
+.file-selector__btn {
+    display: none;
 }
 
 .log-table-common {
-    width: 90%;
+    width: 80vw;
     font-size: 1rem;
     text-align: center;
     border-collapse: collapse;
@@ -37,12 +48,12 @@
 }
 
 .log-table__cell {
-    background: var(--color-bacground-cell-table);
+    background: var(--second-brand-color);
     padding: 10px 20px;
 }
 
 .log-table__title-cell {
-    background: var(--color-background-title-table);
+    background: var(--main-brand-color);
     color: var(--main-color);
     padding: 20px 20px;
 }

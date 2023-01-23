@@ -1,4 +1,4 @@
-const fileSelector = document.querySelector(".file-selector__input");
+const fileSelector = document.querySelector(".file-selector__btn");
 const tableAllLog = document.querySelector(".log-table");
 const tableWarning = document.querySelector(".log-table-warning");
 
