@@ -9,8 +9,11 @@ class LogParser {
         return this.matchesToRow(matches);
     }
 
-    static findLogByStatusWarning(logText) {
-        const matches = logText.matchAll(/^(?<date>\d\d\/\d\d)\s*(?<time>\b\d\d:\d\d:\d\d\b)\s*(?<typeMessage>\bWARNING\b)\s*:\.+(?<nameService>\w+):\s*(?<message>.*)$/igm);
+    static findLogByStatus(logText, status) {
+        const template = `^(?<date>\\d\\d\\/\\d\\d)\\s*(?<time>\\b\\d\\d:\\d\\d:\\d\\d\\b)\\s*(?<typeMessage>\\b${status}\\b)\\s*:\\.+(?<nameService>\\w+):\\s*(?<message>.*)$`;
+        const flags = "igm";
+        const regExp = new RegExp(template, flags);
+        const matches = logText.matchAll(regExp);
 
         return this.matchesToRow(matches);
     }

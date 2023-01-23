@@ -16,9 +16,10 @@ function handleLogSelect(event) {
     fileReader.readAsText(file);
 
     fileReader.onload = () => {
-        const textLog = fileReader.result;
-        const allRowLogs = LogParser.parse(textLog);
-        const warningRowLogs = LogParser.findLogByStatusWarning(textLog);
+        const statusFind = "WARNING";
+        const logText = fileReader.result;
+        const allRowLogs = LogParser.parse(logText);
+        const warningRowLogs = LogParser.findLogByStatus(logText, statusFind);
 
         const logTable = new LogTable(tableAllLog, allRowLogs);
         const logTableWarning = new LogTable(tableWarning, warningRowLogs);
